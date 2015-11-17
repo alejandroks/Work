@@ -1,0 +1,62 @@
+@backgroundColor:#E0FFFF;
+@fontForme:'Oswald';
+@colorForButton:#DAA520;
+
+body{
+	background-color: @backgroundColor;
+}
+.top-logo{
+	background-color:#2E8B57;
+	height:50px;
+	img{
+		width:100px;
+		height:50px;
+	}
+	input[type="text"]{
+		margin-right:5px;
+		margin-top:5px;
+		float:right;
+		background-color:#F5F5F5;
+		border: none;
+		height:40px;
+		padding: 0 10px;
+		vertical-align: top;
+	}
+	button{
+		margin-top:5px;
+		float:right;
+		color: white;
+		background-color:@colorForButton;
+		border:none;
+		height:40px;
+		width:200px;
+		font-family: @fontForme, sans-serif;
+
+	}
+	
+}
+.top-menu{
+	ul{
+		margin-left:250px;
+		margin-top:0px;
+		li{
+			cursor:pointer;
+			display: inline-block;
+			background-color:@colorForButton;
+			padding:10px 60px;
+			margin-left:10px;
+				a{
+					display:block;
+					text-decoration:none;
+					Color:white;
+				}
+				&:hover{
+						border:2px solid black;
+						padding:8px 58px;
+						color:red;
+				}
+
+		}
+	}
+}
+	
