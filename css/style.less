@@ -1,7 +1,8 @@
 @backgroundColor:#E0FFFF;
 @fontForme:'Oswald';
 @colorForButton:#DAA520;
-
+@cubeWight:30%;
+@cubeHeight:10px;
 body{
 	background-color: @backgroundColor;
 }
@@ -59,4 +60,37 @@ body{
 		}
 	}
 }
-	
+.cube {
+	width: @cubeWight;
+	text-align: top;
+	font-size:10px;
+	height:@cubeHeight;
+	transition: transform .33s; /* Animate the transform properties */
+	transform-style: preserve-3d; /* <-NB */
+}
+
+/* The two faces of the cube */
+.flippety{
+	background: rgb(247, 247, 247);
+	border: 1px solid rgba(147, 184, 189, .8);
+	border-radius: 5px;
+	box-shadow: 0 5px 20px rgba(105, 108, 109, .3), 0 0 8px 5px rgba(208, 223, 226, .4) inset;
+	height: @cubeHeight;
+}
+.flop {
+.flippety;
+}
+
+/* Position the faces */
+.flippety {
+	transform: translateZ(@cubeHeight/2);
+}
+
+.flop {
+	transform: rotateX(-90deg) translateZ(-(@cubeHeight/2));
+}
+
+/* Rotate the cube */
+.cube:hover {
+	transform: rotateX(90deg); /* Text bleed at 90º */
+}
