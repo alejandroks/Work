@@ -1,8 +1,8 @@
 @backgroundColor:#E0FFFF;
 @fontForme:'Oswald';
 @colorForButton:#DAA520;
-@cubeWight:30%;
-@cubeHeight:40px;
+@cubeWight:100%;
+@cubeHeight:50px;
 body{
 	background-color: @backgroundColor;
 }
@@ -60,37 +60,51 @@ body{
 		}
 	}
 }
+.cubeWrapper {
+	perspective: 1000px;
+
+}
 .cube {
+	position: relative;
 	width: @cubeWight;
-	text-align: top;
-	font-size:10px;
-	height:@cubeHeight;
-	transition: transform .33s; /* Animate the transform properties */
-	transform-style: preserve-3d; /* <-NB */
+	text-align: center;
+	height: @cubeHeight;
+	transition: transform 3s;
+	transform-style: preserve-3d;
 }
 
 /* The two faces of the cube */
-.flippety{
+.face,.bottom,.left,.right,.top,.zad {
+	width: @cubeWight;
+	position: absolute;
 	background: rgb(247, 247, 247);
 	border: 1px solid rgba(147, 184, 189, .8);
-	border-radius: 5px;
-	box-shadow: 0 5px 20px rgba(105, 108, 109, .3), 0 0 8px 5px rgba(208, 223, 226, .4) inset;
 	height: @cubeHeight;
 }
-.flop {
-.flippety;
-}
-
 /* Position the faces */
-.flippety {
+.face {
 	transform: translateZ(@cubeHeight/2);
 }
 
-.flop {
-	transform: rotateX(-90deg) translateZ(-(@cubeHeight/2));
-}
+.bottom {
 
-/* Rotate the cube */
+	transform: rotateX(-90deg) translateZ(@cubeHeight/2);
+}
+.left{
+
+	transform: rotateY(-90deg) rotateZ(90deg) translateZ(@cubeHeight/2);
+}
+.right{
+
+	transform: rotateY(90deg) translateZ(@cubeHeight/2);
+}
+.top{
+
+	transform: rotateX(90deg) translateZ(@cubeHeight/2);
+}
+.zad{
+	transform: translateZ(-(@cubeHeight/2));
+}
 .cube:hover {
-	transform: rotateX(90deg); /* Text bleed at 90º */
+	transform: rotateY(90deg) rotateX(90deg) rotateY(-290deg) rotateX(-90deg);
 }
