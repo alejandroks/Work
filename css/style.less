@@ -1,23 +1,26 @@
 @backgroundColor:#E0FFFF;
 @fontForme:'Oswald';
-@colorForElementsBackgraund:#2E8B57;
-@colorForButton:#DAA520;
-@cubeWight:50%;
+@colorForElementsBackgraund:#708090;
+@colorForButton:deepskyblue;
+@cubeWight:99.95%;
 @cubeHeight:50px;
 body{
 	margin: 0;
-	background-color: @backgroundColor;
-	min-width:1262px;
+	background-image: url("../img/backgraynd2.jpg");
+	min-width:1662px;
 }
 .centerBody{
-	margin: 0 150px 0 150px ;
+	margin: 0 135px 0 135px ;
+	padding-bottom: 20%;
 	background-color: #F5F5F5;
 }
 .top-logo{
 	position: inherit;
+	box-shadow: 0 0 50px deepskyblue, inset 0 0 20px white;
 	background-color:@colorForElementsBackgraund;
 	height:50px;
 	img{
+		margin-left: 5px;
 		float: left;
 		width:100px;
 		height:50px;
@@ -55,7 +58,6 @@ body{
 			display: inline-block;
 			background-color:@colorForButton;
 			padding:10px 60px;
-			margin-left:10px;
 				a{
 					display:block;
 					text-decoration:none;
@@ -64,7 +66,6 @@ body{
 				&:hover{
 					border:2px solid @colorForElementsBackgraund;
 					padding:8px 58px;
-					color:red;
 				}
 
 		}
@@ -73,10 +74,39 @@ body{
 
 
 
+.leftMeny{
+	margin-top:20px;
+	float: left;
+	.label{
+		color: white;
+		margin-bottom: 10px;
+		padding: 10px 50px;
+		background-color: @colorForButton;
+	}
+	ul{
+		li{
+			margin-bottom: 3px;
+			list-style-type: none;
+			cursor: pointer;
+			background-color: @colorForButton;
+			padding: 10px 50px;
+			a{
+				display: block;
+				text-decoration: none;
+				color:white;
+			}
+		}
+	}
+}
+
+
+
+
 .sliderWrapper{
-	height:400px ;
-	width: 100%;
+	height:350px ;
+	width: 1000px;
 	margin-top: 20px;
+	margin-left: 240px;
 	margin-bottom: 10px;
 	position: relative;
 	.slider{
@@ -87,16 +117,13 @@ body{
 		box-shadow: 0 0 20px rgba(0, 0, 0, .5);
 	}
 	.slides {
+		background-size:800px 350px;
 		height: inherit;
 		position: absolute;
 		width: inherit;
 	}
 }
-.slider1 { background-image: url(http://habrastorage.org/files/3f2/628/bd5/3f2628bd58c8452db516195cb0c9bfc9.jpg);}
-.slider2 { background-image: url(http://habrastorage.org/files/3e1/95d/c7f/3e195dc7f5a64469807f49a14f97ba0e.jpg); }
-.slider3 { background-image: url(http://habrastorage.org/files/663/6b1/d4f/6636b1d4f8e643d29eab8c192fc1cea3.jpg); }
-.slider4 { background-image: url(http://habrastorage.org/files/e59/424/c04/e59424c046be4dab897d84ab015c87ea.jpg); }
-.slider5 { background-image: url(http://habrastorage.org/files/53c/ff6/c1c/53cff6c1caf842368c70b8ef892d8402.jpg); }
+/*.slider1 {background-image: url("../img/slider-header.jpg");}*/
 
 .sliderWrapper >input{
 	display: none;
@@ -108,11 +135,12 @@ body{
 
 .cubeWrapper {
 	margin:0;
-	perspective: 1000000px;
+	perspective: 100000px;
 
 }
 .cube {
-	margin-top: 100px;
+
+	margin-top: 30px;
 	position: relative;
 	width: @cubeWight;
 	text-align: center;
@@ -121,9 +149,10 @@ body{
 	transform-style: preserve-3d;
 		.face,.bottom,.left,.right,.top,.zad {
 			width: @cubeWight;
+			border-radius: 15px;
+			box-shadow: 0 0 2px deepskyblue, inset 0 0 20px white;
 			position: absolute;
 			background: @colorForElementsBackgraund;
-			border: 1px solid @colorForButton;
 			height: @cubeHeight;
 		}
 			.face {
