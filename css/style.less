@@ -1,23 +1,30 @@
-@backgroundColor:#E0FFFF;
-@fontForme:'Oswald';
-@colorForElementsBackgraund:#708090;
-@colorForButton:deepskyblue;
+
 @cubeWight:99.95%;
 @cubeHeight:50px;
+@fontForme:12px;
+
+@dark-primary-color: #388E3C;
+@default-primary-color : #4CAF50;
+@light-primary-color : #C8E6C9;
+@text-primary-color:  #FFFFFF;
+@accent-color : #FF9800; ;
+@primary-text-color  : #212121;
+@secondary-text-color  :  #727272;
+@divider-color    : #B6B6B6;
 body{
 	margin: 0;
-	background-image: url("../img/backgraynd2.jpg");
+	background-image: url("../img/back-graund.jpg");
 	min-width:1662px;
 }
 .centerBody{
 	margin: 0 135px 0 135px ;
 	padding-bottom: 20%;
-	background-color: #F5F5F5;
+	background-color: #E0FFFF;
 }
 .top-logo{
 	position: inherit;
-	box-shadow: 0 0 50px deepskyblue, inset 0 0 20px white;
-	background-color:@colorForElementsBackgraund;
+	box-shadow: 0 0 50px @default-primary-color, inset 0 0 8px @light-primary-color ;
+	background-image: url("../img/back-graund.jpg");
 	height:50px;
 	img{
 		margin-left: 5px;
@@ -39,7 +46,7 @@ body{
 		margin-top:5px;
 		float:right;
 		color: white;
-		background-color:@colorForButton;
+		background-color:@accent-color;
 		border:none;
 		height:40px;
 		width:200px;
@@ -54,20 +61,29 @@ body{
 		margin-top:0;
 		margin-bottom: 6px;
 		li{
+			vertical-align: middle;
+			border: 2px solid @accent-color;
+			box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em @light-primary-color;
+			border-radius: 2px;
+			outline: none;
 			cursor:pointer;
 			display: inline-block;
-			background-color:@colorForButton;
+			background-color:@accent-color;
 			padding:10px 60px;
 				a{
-					display:block;
+
+					display:inline-block;
 					text-decoration:none;
 					Color:white;
 				}
 				&:hover{
-					border:2px solid @colorForElementsBackgraund;
-					padding:8px 58px;
-				}
 
+				}
+				&:active{
+					top: .1em;
+					left: .1em;
+					box-shadow: 0 0 0 80px rgba(0,0,0,.05) inset;
+				}
 		}
 	}
 }
@@ -75,20 +91,21 @@ body{
 
 
 .leftMeny{
-	margin-top:20px;
+	margin-top:30px;
+	margin-left: 1px;
 	float: left;
 	.label{
 		color: white;
 		margin-bottom: 10px;
 		padding: 10px 50px;
-		background-color: @colorForButton;
+		background-color: @default-primary-color;
 	}
 	ul{
 		li{
 			margin-bottom: 3px;
 			list-style-type: none;
 			cursor: pointer;
-			background-color: @colorForButton;
+			background-color: @accent-color;
 			padding: 10px 50px;
 			a{
 				display: block;
@@ -143,16 +160,18 @@ body{
 	margin-top: 30px;
 	position: relative;
 	width: @cubeWight;
-	text-align: center;
 	height: @cubeHeight;
 	transition: transform 1s;
 	transform-style: preserve-3d;
+	text-align: center;
 		.face,.bottom,.left,.right,.top,.zad {
 			width: @cubeWight;
+			font:30px Tahoma,sans-serif;
+			text-align: center;
 			border-radius: 15px;
-			box-shadow: 0 0 2px deepskyblue, inset 0 0 20px white;
+			box-shadow: 0 0 2px @light-primary-color, inset 0 0 20px @light-primary-color;
 			position: absolute;
-			background: @colorForElementsBackgraund;
+			background-image:url("../img/back-graund.jpg");;
 			height: @cubeHeight;
 		}
 			.face {
@@ -184,6 +203,18 @@ body{
 
 }
 
+.Coube-menu{
+	margin-top:4px;
+	font: 14px Thoma;
+	ul{
+		margin: 0 auto;
+		li{
+			margin-left: 20px;
+		}
+	}
+	.top-menu;
+
+}
 
 /* The two faces of the cube */
 
