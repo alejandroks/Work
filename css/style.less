@@ -14,10 +14,10 @@
 body{
 	margin: 0;
 	background-image: url("../img/back-graund.jpg");
-	min-width:1662px;
+	min-width:1000px;
 }
 .centerBody{
-	margin: 0 135px 0 135px ;
+	margin: 0 10em 0 10em ;
 	padding-bottom: 20%;
 	background-color: #E0FFFF;
 }
@@ -56,33 +56,34 @@ body{
 	
 }
 .top-menu{
+	font-size:1em;
 	ul{
-		margin-left: 10%;
+		margin-left: 20%;
 		margin-top:0;
-		margin-bottom: 6px;
+		margin-bottom: 1em;
 		li{
 			vertical-align: middle;
-			border: 2px solid @accent-color;
-			box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em @light-primary-color;
-			border-radius: 2px;
+			box-shadow: 0 0 0 30em rgba(0,0,0,0) inset, .1em .1em .2em @light-primary-color;
 			outline: none;
+			Color:white;
 			cursor:pointer;
 			display: inline-block;
+			font: 1em Thoma;
 			background-color:@accent-color;
-			padding:10px 60px;
+			/*padding:10px 60px;*/
+			padding: 1% 4%;
 				a{
 
 					display:inline-block;
 					text-decoration:none;
-					Color:white;
 				}
 				&:hover{
-
+					color: black;
 				}
 				&:active{
 					top: .1em;
 					left: .1em;
-					box-shadow: 0 0 0 80px rgba(0,0,0,.05) inset;
+					box-shadow: 0 0 0 30em rgba(0,0,0,.05) inset;
 				}
 		}
 	}
@@ -91,7 +92,7 @@ body{
 
 
 .leftMeny{
-	margin-top:30px;
+	margin-top:0.5em;
 	margin-left: 1px;
 	float: left;
 	.label{
@@ -106,7 +107,7 @@ body{
 			list-style-type: none;
 			cursor: pointer;
 			background-color: @accent-color;
-			padding: 10px 50px;
+			padding: 2.5% 5%;
 			a{
 				display: block;
 				text-decoration: none;
@@ -204,18 +205,48 @@ body{
 }
 
 .Coube-menu{
-	margin-top:4px;
+	margin-top:6px;
 	font: 14px Thoma;
 	ul{
 		margin: 0 auto;
 		li{
-			margin-left: 20px;
+			margin-left: 4px;
+			vertical-align: middle;
+			border: 2px solid @accent-color;
+			box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em @light-primary-color;
+			border-radius: 2px;
+			outline: none;
+			Color:white;
+			cursor:pointer;
+			display: inline-block;
+			background-color:@accent-color;
+			padding: 0.6% 6%;
+			a{
+
+				display:inline-block;
+				text-decoration:none;
+			}
+			&:hover{
+
+			}
+			&:active{
+				top: .1em;
+				left: .1em;
+				box-shadow: 0 0 0 80px rgba(0,0,0,.05) inset;
+			}
 		}
 	}
-	.top-menu;
-
 }
-
+@media (max-width:1280px ) {
+.top-menu{
+	font-size: 1em;
+	ul{margin-left:13% ;
+		li{
+			padding: 1% 2%;
+		}
+	}
+}
+}
 /* The two faces of the cube */
 
 /* Position the faces */
