@@ -1,9 +1,6 @@
 
-@cubeSliderW:99%;
-@cubeSliderH:20px;
-
-@cubeWight:99.95%;
-@cubeHeight:50px;
+@cubeWight:300px;
+@cubeHeight:107px;
 @fontForme:12px;
 @bottomBackGr:linear-gradient(#FFC773, #FF9800  48%,#FF9800 52%, #FFC773);
 @b:linear-gradient(#FF9800 0.2%, #388E3C  48%,#388E3C 52%, #3A6A3D);
@@ -34,18 +31,20 @@ body{
 }
 
 .centerBody{
+	box-shadow: 2px 2px 6px rgb(0,0,9);
 	margin: 2% 10% 0 10% ;
 	padding-bottom: 10%;
 	background-color: #E0FFFF;
 }
 .centerBody2{
-	margin: 5% 10% 0 10% ;
+	box-shadow: 2px 2px 6px rgb(0,0,9);
+	margin: 0 10% 0 10% ;
 	padding-bottom: 20%;
 	background-color: #E0FFFF;
 }
 
 .top-logo{
-	position: inherit;
+	position: relative;
 	border-top: 5px solid @accent-color;
 	background-color: @dark-primary-color;
 	box-shadow: 0 0 50px @default-primary-color, inset 0 0 1px @accent-color ;
@@ -59,7 +58,7 @@ body{
 		top:0;right: 0;left: 0;bottom: 0;
 		margin: auto;
 		text-align: center;
-		color:@accent-color;
+		color:@dark-primary-color;
 	}
 	img{
 		margin-left: 5px;margin-top: 5px;
@@ -99,6 +98,62 @@ body{
 	}
 
 }
+.cubeWrapper {
+	position: absolute;
+	margin-top: -20px;
+	perspective: 100000px;
+	left: 50%;
+	margin-left: -9%;
+}
+.cube {
+	padding: 1.5em 0;
+	position: relative;
+	width: @cubeWight;
+	height: @cubeHeight;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	text-align: center;
+	.face,.bottom,.left,.right,.top,.zad {
+		width: @cubeWight;
+		text-align: center;
+		box-shadow: 0 0 2px @dark-primary-color, inset 0 0 9px @dark-primary-color;
+		position: absolute;
+		border-bottom-right-radius:20px ;
+		background-color: @light-primary-color;
+		border: 1px solid @accent-color;
+		border-bottom-left-radius: 20px;
+		height: @cubeHeight;
+	}
+	.face {
+		transform: translateZ(@cubeHeight/2);
+	}
+
+	.bottom {
+
+		transform: rotateX(-90deg) translateZ(@cubeHeight/2);
+	}
+	.left{
+
+		transform: rotateY(-90deg) rotateZ(90deg) translateZ(@cubeHeight/2);
+	}
+	.right{
+
+		transform: rotateY(90deg) translateZ(@cubeHeight/2);
+	}
+	.top{
+
+		transform: rotateX(90deg) translateZ(@cubeHeight/2);
+	}
+	.zad{
+		transform: translateZ(-(@cubeHeight/2));
+	}
+	&:hover {
+		transform: rotateX(-90deg);
+	}
+
+}
+
 .centre{
 	position: relative; left: 0; top: 0; text-align: center;
 	background-color: @accent-color;
@@ -218,11 +273,7 @@ body{
 
 
 
-.cubeWrapper {
-	margin:0;
-	perspective: 100000px;
 
-}
 
 .botonsForSlider{
 
@@ -268,7 +319,7 @@ body{
 .slider{
 	background-color: red;
 	position: relative; width: 55%; top:1em;
-	margin-left: 30%;
+	margin-left: 35%;
 	text-align: center;
 	.slides{
 		background-color: #FF9800;
@@ -291,97 +342,101 @@ body{
 }
 
 
-.backgraundForCoub{
+
+.nameBlock{
+	font:17px  sens-serif;
+	vertical-align: middle;
+	text-align: center;
+	margin: 2% 0 0 10% ;
 	position: relative;
-	margin-top: 0;
-	width: 100%;
-	height: 200px;
+	height: 30px;
+	width: 200px;
+	background-color: @dark-primary-color;
+	border-top-right-radius: 20px;
+	box-shadow: 4px 2px 3px rgba(0,0,3,.6);
+}
+
+
+
+.backgraundFormenu{
+	margin: 0 10% 0 10% ;
+	position: relative;
+	height:100px;
 	background-color: @dark-primary-color;
 	box-shadow: 2px 2px 6px rgb(0,0,9);
 
 }
-.cube {
-	padding: 1.5em 0;
+
+.color2{
+	box-shadow: 4px 1px 3px rgba(0,0,3,.6);
+	background-color: #E0FFFF;;
+}
+
+
+.rectangles{
+	position: absolute;
+	width: 100%;
+	margin-top: 8px;
+	.teg-for-menu{
+		margin: 0;
+		position: relative;
+		width: 0;
+		height: 0;
+		border: 20px solid transparent;
+		border-top-color: @dark-primary-color;
+	}
+	.left{
+		float: left;
+		transform: rotate(270deg);
+	}
+	.right{
+		float: right;
+		transform: rotate(90deg);
+	}
+}
+
+
+
+.for-commerch-menu{
 	position: relative;
-	width: @cubeWight;
-	height: @cubeHeight;
-	transition: transform 1s;
-	transform-style: preserve-3d;
+	top:20px;
+	width: auto;
+	box-shadow: 1px 1px 4px rgb(0,0,4);
+	background-color: @accent-color;
+	border-top: 1px solid @accent-color;
+	border-bottom: 1px solid @accent-color;
+	height: auto;
+
+}
+.commerch-menu{
+	position: relative;
 	text-align: center;
-		.face,.bottom,.left,.right,.top,.zad {
-			width: @cubeWight;
-			font:30px Calligraph;
-			text-align: center;
-			border-radius: 15px;
-			box-shadow: 0 0 2px @dark-primary-color, inset 0 0 9px @dark-primary-color;
-			position: absolute;
-			background-color: #E0FFFF;
-			height: @cubeHeight;
-		}
-			.face {
-				transform: translateZ(@cubeHeight/2);
-			}
-
-			.bottom {
-
-				transform: rotateX(-90deg) translateZ(@cubeHeight/2);
-			}
-			.left{
-
-				transform: rotateY(-90deg) rotateZ(90deg) translateZ(@cubeHeight/2);
-			}
-			.right{
-
-				transform: rotateY(90deg) translateZ(@cubeHeight/2);
-			}
-			.top{
-
-				transform: rotateX(90deg) translateZ(@cubeHeight/2);
-			}
-			.zad{
-				transform: translateZ(-(@cubeHeight/2));
-			}
-			&:hover {
-			transform: rotateX(90deg);
-			}
-
-}
-
-
-
-.cube2{
-	padding: 0 0;
-	.cube;
-}
-.Coube-menu{
-	position: relative;
-	left: 0; height: auto; width: auto;text-align: center;
-	margin-top:6px;
-	font: 14px Thoma;
+	vertical-align: middle;
+	.first{
+		border-left:2px solid @accent-color  ;
+	}
 	ul{
+		margin: 0 auto;
+		font: 14px Verdana, Geneva, sans-serif;
+		letter-spacing : -.36em;
+		font-size : 0;
 		li{
-			margin-left: 4px;
-			vertical-align: middle;
-			border: 2px solid @accent-color;
-			box-shadow: 0 0 0 5em rgba(1,1,1,0) inset, .1em .1em .2em @light-primary-color;
-			border-radius: 2px;
-			outline: none;
+			letter-spacing: normal;
+			font-size : 14px;
+			border-right: 2px solid @accent-color;border-bottom:2px solid @accent-color;border-top:1px solid @accent-color ;
 			Color:@color-for-a;
 			cursor:pointer;
 			display: inline-block;
-			background:@bottomBackGr;
-			padding: 0.6% 6%;
+			background:@dark-primary-color;
+			padding: 1.5% 6%;
 			a{
-
-				display:inline-block;
 				text-decoration:none;
 			}
 			&:hover{
-
+				background-color: @accent-color;
+				color: #000009;
 			}
 			&:active{
-				top: .1em;
-				left: .1em;
 				box-shadow: 0 0 0 80px rgba(0,0,0,.05) inset;
 			}
 		}
@@ -430,7 +485,16 @@ body{
 }
 @media (max-width:1100px ) {
 	.centerBody{
+		margin: 2% 5% 0 5% ;
+	}
+	.centerBody2{
 		margin: 0 5% 0 5% ;
+	}
+	.backgraundFormenu{
+		margin: 0 5% 0 5% ;
+	}
+	.nameBlock{
+		margin: 2% 0 0 5% ;
 	}
 }
 @media (max-width:1100px ) {
