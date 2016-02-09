@@ -8,6 +8,11 @@
 @color-for-a:#6C4100;
 
 
+
+@back-grund:#FDF5E6;
+
+
+
 @dark-primary-color: #388E3C;
 @default-primary-color : #4CAF50;
 @light-primary-color : #C8E6C9;
@@ -19,7 +24,7 @@
 body{
 	margin: 0;
 	min-width: 890px;
-	background-image: url("../img/1234.png");
+	background-color: @back-grund ;
 	/*background-color: #00733f;*/
 
 }
@@ -29,16 +34,18 @@ body{
 	font-weight: 400;
 	font-style: normal;
 }
-
-.centerBody{
-	box-shadow: 2px 2px 6px rgb(0,0,9);
-	margin: 2% 10% 0 10% ;
-	padding-bottom: 10%;
-	background-color: #E0FFFF;
+.newCentre{
+	position: relative;
+	box-shadow: inset 0 15px 15px  -15px #333 , inset 0 -15px 15px  -15px #333;
+	top:0;left: 0;
+	width: 100%;
+	height: 500px;
+	background-color: #DCDCDC;
 }
 .centerBody2{
+	position: relative;
 	box-shadow: 2px 2px 6px rgb(0,0,9);
-	margin: 0 10% 0 10% ;
+	margin: 0 15% 0 15% ;
 	padding-bottom: 20%;
 	background-color: #E0FFFF;
 }
@@ -199,20 +206,96 @@ body{
 }
 
 
+
+
+.backgraundFormenu{
+	margin: 0 0 0 0 ;
+	width: 100%;
+	position: relative;
+	height:70px;
+	background-color:@back-grund ;
+	box-shadow: 2px 2px 6px rgb(0,0,9);
+}
+
+
+.color2{
+	box-shadow: 4px 1px 3px rgba(0,0,3,.6);
+	background-color: #DCDCDC;;
+}
+
+
+.rectangles{
+	position: absolute;
+	.teg-for-menu{
+		margin: 0;
+		position: relative;
+		width: 0;
+		height: 0;
+		border: 10px solid transparent;
+		border-top-color: @accent-color;
+	}
+	.left{
+		float: left;
+		transform: translate(-15px, -2px) rotate(270deg) ;
+	}
+	.right{
+		float: right;
+		transform: rotate(90deg) translate(-40px -40px);
+	}
+}
+
+
+.commerch-menu{
+	position: relative;
+	text-align: center;
+	ul{
+
+		margin: 0 auto;
+		font: 14px Verdana, Geneva, sans-serif;
+		letter-spacing : -.36em;
+		font-size : 0;
+		li{
+			letter-spacing: normal;
+			font-size : 14px;
+			Color:@color-for-a;
+			cursor:pointer;
+			display: inline-block;
+			background:@back-grund;
+			padding: 27px 6%;
+			a{
+				text-decoration:none;
+			}
+			&:hover{
+				background-color: @accent-color;
+				color: #000009;
+			}
+			&:active{
+				box-shadow: 0 0 0 80px rgba(0,0,0,.05) inset;
+			}
+		}
+	}
+}
+
+
+
 .for-left-meny{
 	z-index: 3;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f7fc+0,f8fbfe+100&1+0,1+79,0.7+88,0+100 */
+	background: -moz-linear-gradient(left,  rgba(242,247,252,1) 0%, rgba(247,250,254,1) 79%, rgba(247,250,254,0.7) 88%, rgba(248,251,254,0) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left,  rgba(242,247,252,1) 0%,rgba(247,250,254,1) 79%,rgba(247,250,254,0.7) 88%,rgba(248,251,254,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right,  rgba(242,247,252,1) 0%,rgba(247,250,254,1) 79%,rgba(247,250,254,0.7) 88%,rgba(248,251,254,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f7fc', endColorstr='#00f8fbfe',GradientType=1 ); /* IE6-9 */
+
+
 	position: relative;
 	float: left;
 	margin:20px 0 0 0;
-	border-bottom-right-radius: 20px;
-	background-color: @dark-primary-color;
-	fill-opacity: 0.40;
-	width: 25%;
-	min-width: 239.406px;
-	height: 35%;
+	width: 280px;
+	height: 360px;
 }
 
 .labe2{
+	width: 135px;
 	text-align: center;
 	color: white;
 	margin-bottom: 10px;
@@ -222,39 +305,28 @@ body{
 }
 
 .leftMeny{
+	position: relative;
+	top:20px;
 	margin-left: 1px;
 	float: left;
 	width: 235px;
 	ul{
 		position: inherit;
-		z-index: 2;
 
 		li{
+			transition:1s;
+			width: 205px;
 			position: relative;
-			margin-bottom: 3px;
+			margin-bottom: 25px;
 			list-style-type: none;
 			cursor: pointer;
-			background:@bottomBackGr;
-			padding: 2.5% 5%;
-			border-bottom-right-radius: 20px ;
-			&:before{
-				content: ' ';
-				position: absolute;
-				width: 15px;
-				height: 15px;
-				border-bottom-right-radius: 13px;
-				transform: translate(209px,7px) skew(10deg,3deg);
-				box-shadow:-2px -2px 5px rgba(0, 0, 0, 0.3);
-			}
-			&:after{
-				position: absolute;
-				content: ' ';
-				width: 15px;
-				height: 15px;
-				z-index:-1;
-				box-shadow: 20px 20px 3px rgba(0, 0, 0, 0.2) ;
-				transform: translate(182px,-30px)  skew(20deg) rotate(0deg) ;
-			}
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e9a52+0,2ad864+50,20ca5c+51,7ee8a0+100 */
+			background: rgb(30,154,82); /* Old browsers */
+			background: -moz-linear-gradient(left,  rgba(30,154,82,1) 0%, rgba(42,216,100,1) 50%, rgba(32,202,92,1) 51%, rgba(126,232,160,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left,  rgba(30,154,82,1) 0%,rgba(42,216,100,1) 50%,rgba(32,202,92,1) 51%,rgba(126,232,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right,  rgba(30,154,82,1) 0%,rgba(42,216,100,1) 50%,rgba(32,202,92,1) 51%,rgba(126,232,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e9a52', endColorstr='#7ee8a0',GradientType=1 ); /* IE6-9 */
+			padding: 2.5% 4%;
 			a{
 				display: block;
 				text-decoration: none;
@@ -262,6 +334,9 @@ body{
 				&:hover{
 					color:black;
 				}
+			}
+			&:hover{
+				width: 230px;
 			}
 		}
 	}
@@ -274,9 +349,46 @@ body{
 
 
 
+.block-for-slider{
+	z-index: 2;
+	position:absolute;
+	left: 50%;
+	margin-left: -400px;
+	margin-top:2% ;
+	width: 600px;
+	height: 300px;
+}
+
+
+
+
+.slider{
+	z-index: -1;
+	margin-left: 230px;
+	position: absolute; width: 600px; top:20px;
+	height: 300px;
+	text-align: center;
+	.slides{
+		background-color: @back-grund;
+		padding: 5px;
+	}
+	.inner{
+		width: 400%;
+	}
+	.page{
+		float: left;width: 25%;
+		img{
+			width: 600px;
+			height:350px;
+		}
+	}
+	#overflow{
+		overflow: hidden;
+	}
+}
+
 
 .botonsForSlider{
-
 	position: absolute;
 	width: 100%;
 	top:155px;
@@ -314,40 +426,11 @@ body{
 	border-top-color:@accent-color ;
 }
 
-
-
-.slider{
-	background-color: red;
-	position: relative; width: 55%; top:1em;
-	margin-left: 35%;
-	text-align: center;
-	.slides{
-		background-color: #FF9800;
-		padding: 5px;
-		box-shadow: 2px 2px 4px rgb(0,0,0,3);
-	}
-	.inner{
-		width: 400%;
-	}
-	.page{
-		float: left;width: 25%;
-		img{
-			width: 100%;
-			height:350px;
-		}
-	}
-	#overflow{
-		overflow: hidden;
-	}
-}
-
-
-
 .nameBlock{
 	font:17px  sens-serif;
 	vertical-align: middle;
 	text-align: center;
-	margin: 2% 0 0 10% ;
+	margin: 2% 0 0 15% ;
 	position: relative;
 	height: 30px;
 	width: 200px;
@@ -358,90 +441,7 @@ body{
 
 
 
-.backgraundFormenu{
-	margin: 0 10% 0 10% ;
-	position: relative;
-	height:100px;
-	background-color: @dark-primary-color;
-	box-shadow: 2px 2px 6px rgb(0,0,9);
 
-}
-
-.color2{
-	box-shadow: 4px 1px 3px rgba(0,0,3,.6);
-	background-color: #E0FFFF;;
-}
-
-
-.rectangles{
-	position: absolute;
-	width: 100%;
-	margin-top: 8px;
-	.teg-for-menu{
-		margin: 0;
-		position: relative;
-		width: 0;
-		height: 0;
-		border: 20px solid transparent;
-		border-top-color: @dark-primary-color;
-	}
-	.left{
-		float: left;
-		transform: rotate(270deg);
-	}
-	.right{
-		float: right;
-		transform: rotate(90deg);
-	}
-}
-
-
-
-.for-commerch-menu{
-	position: relative;
-	top:20px;
-	width: auto;
-	box-shadow: 1px 1px 4px rgb(0,0,4);
-	background-color: @accent-color;
-	border-top: 1px solid @accent-color;
-	border-bottom: 1px solid @accent-color;
-	height: auto;
-
-}
-.commerch-menu{
-	position: relative;
-	text-align: center;
-	vertical-align: middle;
-	.first{
-		border-left:2px solid @accent-color  ;
-	}
-	ul{
-		margin: 0 auto;
-		font: 14px Verdana, Geneva, sans-serif;
-		letter-spacing : -.36em;
-		font-size : 0;
-		li{
-			letter-spacing: normal;
-			font-size : 14px;
-			border-right: 2px solid @accent-color;border-bottom:2px solid @accent-color;border-top:1px solid @accent-color ;
-			Color:@color-for-a;
-			cursor:pointer;
-			display: inline-block;
-			background:@dark-primary-color;
-			padding: 1.5% 6%;
-			a{
-				text-decoration:none;
-			}
-			&:hover{
-				background-color: @accent-color;
-				color: #000009;
-			}
-			&:active{
-				box-shadow: 0 0 0 80px rgba(0,0,0,.05) inset;
-			}
-		}
-	}
-}
 .newsWrapper{
 	position: relative; left: 0; top: 0; height: auto; width: auto; text-align: center;
 	.tex_align{
@@ -465,7 +465,7 @@ body{
 .bottom_line{
 	position: absolute;
 	width: 100%;
-	height: 20px;
+	height: 100px;
 	background-color: @dark-primary-color;
 	border: black;
 }
@@ -490,16 +490,9 @@ body{
 	.centerBody2{
 		margin: 0 5% 0 5% ;
 	}
-	.backgraundFormenu{
-		margin: 0 5% 0 5% ;
-	}
 	.nameBlock{
+		position: relative;
 		margin: 2% 0 0 5% ;
-	}
-}
-@media (max-width:1100px ) {
-	.slider{
-		margin-left: 35%;
 	}
 }
 
