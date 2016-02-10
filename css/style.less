@@ -11,8 +11,6 @@
 
 @back-grund:#FDF5E6;
 
-
-
 @dark-primary-color: #388E3C;
 @default-primary-color : #4CAF50;
 @light-primary-color : #C8E6C9;
@@ -24,8 +22,7 @@
 body{
 	margin: 0;
 	min-width: 890px;
-	background-color: @back-grund ;
-	/*background-color: #00733f;*/
+	background: @back-grund ;
 
 }
 @font-face {
@@ -40,20 +37,20 @@ body{
 	top:0;left: 0;
 	width: 100%;
 	height: 500px;
-	background-color: #DCDCDC;
+	background: #DCDCDC;
 }
 .centerBody2{
 	position: relative;
 	box-shadow: 2px 2px 6px rgb(0,0,9);
-	margin: 0 15% 0 15% ;
+	margin: 0 15% 4% 15% ;
 	padding-bottom: 20%;
-	background-color: #E0FFFF;
+	background: #DCDCDC;
 }
 
 .top-logo{
 	position: relative;
 	border-top: 5px solid @accent-color;
-	background-color: @dark-primary-color;
+	background: @dark-primary-color;
 	box-shadow: 0 0 50px @default-primary-color, inset 0 0 1px @accent-color ;
 	opacity: 0.99;
 	width: 100%;
@@ -68,18 +65,19 @@ body{
 		color:@dark-primary-color;
 	}
 	img{
+		position: absolute;
 		margin-left: 5px;margin-top: 5px;
 		float: left;
 		width:100px;
 		height:30%;
 	}
 	input[type="text"]{
+		border: 1.5px solid @accent-color;
 		position: relative;
 		margin-right:5px;
 		margin-top:5px;
 		float:right;
-		background-color:#F5F5F5;
-		border: none;
+		background:#F5F5F5;
 		width: 10%;
 		height:30%;
 		padding: 0 10px;
@@ -97,9 +95,9 @@ body{
 		width:3%;
 		cursor: pointer;
 		img{
-			position: relative;
-			margin-bottom: 4px;
+			vertical-align: middle;
 			height: 20px;width: 20px;
+			transform:  translate(-14px,-14px);
 		}
 
 	}
@@ -127,7 +125,7 @@ body{
 		box-shadow: 0 0 2px @dark-primary-color, inset 0 0 9px @dark-primary-color;
 		position: absolute;
 		border-bottom-right-radius:20px ;
-		background-color: @light-primary-color;
+		background: @light-primary-color;
 		border: 1px solid @accent-color;
 		border-bottom-left-radius: 20px;
 		height: @cubeHeight;
@@ -163,7 +161,7 @@ body{
 
 .centre{
 	position: relative; left: 0; top: 0; text-align: center;
-	background-color: @accent-color;
+	background: @accent-color;
 }
 
 
@@ -213,14 +211,14 @@ body{
 	width: 100%;
 	position: relative;
 	height:70px;
-	background-color:@back-grund ;
+	background:@back-grund ;
 	box-shadow: 2px 2px 6px rgb(0,0,9);
 }
 
 
 .color2{
 	box-shadow: 4px 1px 3px rgba(0,0,3,.6);
-	background-color: #DCDCDC;;
+	background: #DCDCDC;;
 }
 
 
@@ -266,7 +264,7 @@ body{
 				text-decoration:none;
 			}
 			&:hover{
-				background-color: @accent-color;
+				background: @accent-color;
 				color: #000009;
 			}
 			&:active{
@@ -300,7 +298,7 @@ body{
 	color: white;
 	margin-bottom: 10px;
 	padding: 10px 50px;
-	background-color: @default-primary-color;
+	background: @default-primary-color;
 	border-top: 1px solid @accent-color;
 }
 
@@ -314,7 +312,7 @@ body{
 		position: inherit;
 
 		li{
-			transition:1s;
+			transition:0.5s;
 			width: 205px;
 			position: relative;
 			margin-bottom: 25px;
@@ -355,8 +353,8 @@ body{
 	left: 50%;
 	margin-left: -400px;
 	margin-top:2% ;
-	width: 600px;
-	height: 300px;
+	width: 860px;
+	height: 400px;
 }
 
 
@@ -369,7 +367,7 @@ body{
 	height: 300px;
 	text-align: center;
 	.slides{
-		background-color: @back-grund;
+		background: @back-grund;
 		padding: 5px;
 	}
 	.inner{
@@ -388,11 +386,12 @@ body{
 }
 
 
-.botonsForSlider{
+.butonsForSlider{
+	z-index: 3;
 	position: absolute;
 	width: 100%;
 	top:155px;
-	.botton{
+	.button{
 		cursor: pointer;
 		width: 0;  height: 0;
 		border: 20px solid transparent;
@@ -412,17 +411,17 @@ body{
 	}
 	.left{
 		float: left;
-		margin-left:-10%;
+		margin-left: -60px;
 		transform: rotate(90deg);
 	}
 	.right{
 		float: right;
-		margin-right:-10%;
+		margin-right: -25px;
 		transform: rotate(270deg);
 	}
 
 }
-.botton:hover:before{
+.button:hover:before{
 	border-top-color:@accent-color ;
 }
 
@@ -434,7 +433,7 @@ body{
 	position: relative;
 	height: 30px;
 	width: 200px;
-	background-color: @dark-primary-color;
+	background: @dark-primary-color;
 	border-top-right-radius: 20px;
 	box-shadow: 4px 2px 3px rgba(0,0,3,.6);
 }
@@ -465,9 +464,20 @@ body{
 .bottom_line{
 	position: absolute;
 	width: 100%;
-	height: 100px;
-	background-color: @dark-primary-color;
-	border: black;
+	height: 200px;
+	box-shadow: 0 -5px 20px 0 rgba(0,0,3,.3);
+	background: @dark-primary-color;
+
+	.double-back-graynd{
+		box-shadow: inset 0 15px 15px  -15px #333 ;
+		background: url("../img/12345.png");
+		position: absolute;
+		width: 100%;
+		height: 50px;
+		background: @accent-color;
+		vertical-align: bottom;
+		bottom: 0;
+	}
 }
 
 
