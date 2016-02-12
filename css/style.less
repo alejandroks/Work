@@ -39,6 +39,12 @@ body{
 	height: 500px;
 	background: #DCDCDC;
 }
+.centreFor-help{
+	position: relative;
+	height: 200px;
+	margin: 4% 15% 4% 15% ;
+	background: #DCDCDC;
+}
 .centerBody2{
 	position: relative;
 	box-shadow: 2px 2px 6px rgb(0,0,9);
@@ -144,13 +150,12 @@ body{
 	}
 	.top{
 		transform: rotateX(90deg) translateZ(@cubeHeight/2);
-		border-bottom-right-radius:20px ;
-		border-bottom-left-radius:20px ;
+		border-top-right-radius:20px ;
+		border-top-left-radius:20px ;
 	}
 	.zad{
 		transform: translateZ(-(@cubeHeight/2));
-		border-bottom-left-radius: 20px;
-		border-bottom-right-radius: 20px;
+
 	}
 	&:hover {
 		transform: rotateX(-90deg);
@@ -423,6 +428,46 @@ body{
 .button:hover:before{
 	border-top-color:@dark-primary-color ;
 }
+.help-centre{
+	position: absolute;
+	left:50px;
+}
+
+.cube-for-help {
+	padding: 1.5em 0;
+	position: relative;
+	width: 150px;
+	height: 100px;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+	.face,.bottom,.left,.right,.top,.zad {
+		position: absolute;
+		width: 150px;
+		height: 100px;
+		text-align: center;
+		box-shadow: 0 0 2px @dark-primary-color, inset 0 0 9px @dark-primary-color;
+		background: @light-primary-color;
+		border: 1px solid @accent-color;
+
+	}
+	.face {
+		transform: translateZ(100px/2);
+	}
+
+	.top{
+		transform: rotateX(90deg) translateZ(100px/2);
+
+	}
+	&:hover {
+		transform: rotateX(-90deg);
+	}
+
+}
+
+
+
+
+
 
 .nameBlock{
 	font:17px  sens-serif;
