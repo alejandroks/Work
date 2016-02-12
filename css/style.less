@@ -11,11 +11,11 @@
 
 @back-grund:#FDF5E6;
 
-@dark-primary-color: #388E3C;
+@dark-primary-color:   rgb(0,110,46);
 @default-primary-color : #4CAF50;
 @light-primary-color : #C8E6C9;
 @text-primary-color:  #FFFFFF;
-@accent-color : #FF9800; ;
+@accent-color :  rgb(252,234,187);
 @primary-text-color  : #212121;
 @secondary-text-color  :  #727272;
 @divider-color    : #B6B6B6;
@@ -64,13 +64,7 @@ body{
 		text-align: center;
 		color:@dark-primary-color;
 	}
-	img{
-		position: absolute;
-		margin-left: 5px;margin-top: 5px;
-		float: left;
-		width:100px;
-		height:30%;
-	}
+
 	input[type="text"]{
 		border: 1.5px solid @accent-color;
 		position: relative;
@@ -89,7 +83,7 @@ body{
 		margin-top:5px;
 		float:right;
 		color: @color-for-a;
-		background:@bottomBackGr;
+		background:@dark-primary-color;
 		border:none;
 		height:30%;
 		width:3%;
@@ -97,7 +91,6 @@ body{
 		img{
 			vertical-align: middle;
 			height: 20px;width: 20px;
-			transform:  translate(-14px,-14px);
 		}
 
 	}
@@ -124,19 +117,22 @@ body{
 		text-align: center;
 		box-shadow: 0 0 2px @dark-primary-color, inset 0 0 9px @dark-primary-color;
 		position: absolute;
-		border-bottom-right-radius:20px ;
 		background: @light-primary-color;
 		border: 1px solid @accent-color;
-		border-bottom-left-radius: 20px;
+
 		height: @cubeHeight;
 	}
 	.face {
 		transform: translateZ(@cubeHeight/2);
+		border-bottom-right-radius:20px ;
+		border-bottom-left-radius:20px ;
 	}
 
 	.bottom {
 
 		transform: rotateX(-90deg) translateZ(@cubeHeight/2);
+		border-top-right-radius:20px ;
+		border-top-left-radius:20px ;
 	}
 	.left{
 
@@ -147,11 +143,14 @@ body{
 		transform: rotateY(90deg) translateZ(@cubeHeight/2);
 	}
 	.top{
-
 		transform: rotateX(90deg) translateZ(@cubeHeight/2);
+		border-bottom-right-radius:20px ;
+		border-bottom-left-radius:20px ;
 	}
 	.zad{
 		transform: translateZ(-(@cubeHeight/2));
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
 	}
 	&:hover {
 		transform: rotateX(-90deg);
@@ -230,7 +229,7 @@ body{
 		width: 0;
 		height: 0;
 		border: 10px solid transparent;
-		border-top-color: @accent-color;
+		border-top-color: @dark-primary-color;
 	}
 	.left{
 		float: left;
@@ -264,7 +263,7 @@ body{
 				text-decoration:none;
 			}
 			&:hover{
-				background: @accent-color;
+				background: @dark-primary-color;
 				color: #000009;
 			}
 			&:active{
@@ -320,17 +319,17 @@ body{
 			cursor: pointer;
 			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e9a52+0,2ad864+50,20ca5c+51,7ee8a0+100 */
 			background: rgb(30,154,82); /* Old browsers */
-			background: -moz-linear-gradient(left,  rgba(30,154,82,1) 0%, rgba(42,216,100,1) 50%, rgba(32,202,92,1) 51%, rgba(126,232,160,1) 100%); /* FF3.6-15 */
-			background: -webkit-linear-gradient(left,  rgba(30,154,82,1) 0%,rgba(42,216,100,1) 50%,rgba(32,202,92,1) 51%,rgba(126,232,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
-			background: linear-gradient(to right,  rgba(30,154,82,1) 0%,rgba(42,216,100,1) 50%,rgba(32,202,92,1) 51%,rgba(126,232,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			background: -moz-linear-gradient(left,  rgba(30,154,82,1) 0%,rgba(32,202,92,1)  50%,rgba(42,216,100,1)  51%, rgba(126,232,160,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left,  rgba(30,154,82,1) 0%,rgba(42,216,100,1) 50%,rgba(42,216,100,1) 51%,rgba(126,232,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right,  rgba(30,154,82,1) 0%,rgba(42,216,100,1) 50%,rgba(42,216,100,1) 51%,rgba(126,232,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e9a52', endColorstr='#7ee8a0',GradientType=1 ); /* IE6-9 */
 			padding: 2.5% 4%;
 			a{
 				display: block;
 				text-decoration: none;
-				color:@color-for-a;
+				color:black;
 				&:hover{
-					color:black;
+					color:white;
 				}
 			}
 			&:hover{
@@ -422,7 +421,7 @@ body{
 
 }
 .button:hover:before{
-	border-top-color:@accent-color ;
+	border-top-color:@dark-primary-color ;
 }
 
 .nameBlock{
@@ -467,17 +466,29 @@ body{
 	height: 200px;
 	box-shadow: 0 -5px 20px 0 rgba(0,0,3,.3);
 	background: @dark-primary-color;
-
+	img{
+		position: relative;
+		margin-left: 5px;margin-top: 5px;
+		float: left;
+		width:100px;
+		height:40px;
+	}
 	.double-back-graynd{
 		box-shadow: inset 0 15px 15px  -15px #333 ;
 		background: url("../img/12345.png");
 		position: absolute;
 		width: 100%;
 		height: 50px;
-		background: @accent-color;
 		vertical-align: bottom;
 		bottom: 0;
 	}
+	.for-text{
+		float: left;
+		margin-left: 7px;
+		width: 350px;
+		color: white;
+	}
+
 }
 
 
