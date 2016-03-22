@@ -1,10 +1,12 @@
 
-@cubeWight:300px;
-@cubeHeight:107px;
+@cubeWight:px;
+@cubeHeight:90px;
 @fontForme:12px;
 @bottomBackGr:linear-gradient(#FFC773, #FF9800  48%,#FF9800 52%, #FFC773);
-@b:linear-gradient(#FF9800 0.2%, #388E3C  48%,#388E3C 52%, #3A6A3D);
+@b:linear-gradient(rgb(252,234,187)0.2%, rgb(252,234,187)  48%,#388E3C 52%, #3A6A3D);
 
+/*@bottomBackGr:linear-gradient(#FFC773, #FF9800  48%,#FF9800 52%, #FFC773);
+@b:linear-gradient(#FF9800 0.2%, #388E3C  48%,#388E3C 52%, #3A6A3D);*/
 @color-for-a:#6C4100;
 
 
@@ -19,6 +21,12 @@
 @primary-text-color  : #212121;
 @secondary-text-color  :  #727272;
 @divider-color    : #B6B6B6;
+
+
+/*Цвет для заголовка блока новостей*/
+
+
+/*Центральные обёртки  */
 body{
 	margin: 0;
 	min-width: 890px;
@@ -39,12 +47,6 @@ body{
 	height: 500px;
 	background: #DCDCDC;
 }
-.centreFor-help{
-	position: relative;
-	height: 200px;
-	margin: 4% 15% 4% 15% ;
-	background: #DCDCDC;
-}
 .centerBody2{
 	position: relative;
 	box-shadow: 2px 2px 6px rgb(0,0,9);
@@ -53,22 +55,46 @@ body{
 	background: #DCDCDC;
 }
 
+/*Центральные обёртки  */
+
+.top-time-work{
+	float: left;
+	position: absolute;
+	margin-top: 15px;
+	margin-left: 15px;
+	height: 80px;
+	color: @accent-color;
+	font-size: 14.5px;
+}
+/*Топ лого (Header) */
 .top-logo{
+
+	.first-text-logo{
+		font-size: 1.2em;
+		position: absolute;
+		margin-top: 20px;
+		left: 37%;
+		color: yellow;
+	}
+	.sekond-tex-logo{
+		width: auto;
+		position: absolute;
+		margin-top: 35px;
+		left: 41%;
+	}
 	position: relative;
 	border-top: 5px solid @accent-color;
 	background: @dark-primary-color;
-	box-shadow: 0 0 50px @default-primary-color, inset 0 0 1px @accent-color ;
+	box-shadow: inset 0 0 1px @accent-color ;
 	opacity: 0.99;
 	width: 100%;
 	height:7em;
+	/*Для названия*/
 	.Header{
 		text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
-		font:2em Calligraph;
-		position: absolute;
-		top:0;right: 0;left: 0;bottom: 0;
+		font:2.5em Calligraph;
 		margin: auto;
-		text-align: center;
-		color:@dark-primary-color;
+		color:yellow;
 	}
 
 	input[type="text"]{
@@ -102,43 +128,38 @@ body{
 	}
 
 }
+/*Скажем так конструктор для куба */
 .cubeWrapper {
 	position: absolute;
-	margin-top: -20px;
+	margin-top: -15px;
 	perspective: 100000px;
-	left: 50%;
-	margin-left: -9%;
+	margin-left: 1%;
 }
+
 .cube {
 	padding: 1.5em 0;
 	position: relative;
 	width: @cubeWight;
 	height: @cubeHeight;
-	transition: transform 1s;
 	transform-style: preserve-3d;
 	backface-visibility: hidden;
-	text-align: center;
+	text-align: left;
+	//animation: rotate 3s infinite ease-in-out;
 	.face,.bottom,.left,.right,.top,.zad {
 		width: @cubeWight;
-		text-align: center;
 		box-shadow: 0 0 2px @dark-primary-color, inset 0 0 9px @dark-primary-color;
 		position: absolute;
-		background: @light-primary-color;
-		border: 1px solid @accent-color;
+		background: @dark-primary-color;
 
 		height: @cubeHeight;
 	}
 	.face {
 		transform: translateZ(@cubeHeight/2);
-		border-bottom-right-radius:20px ;
-		border-bottom-left-radius:20px ;
 	}
 
 	.bottom {
 
 		transform: rotateX(-90deg) translateZ(@cubeHeight/2);
-		border-top-right-radius:20px ;
-		border-top-left-radius:20px ;
 	}
 	.left{
 
@@ -150,25 +171,23 @@ body{
 	}
 	.top{
 		transform: rotateX(90deg) translateZ(@cubeHeight/2);
-		border-top-right-radius:20px ;
-		border-top-left-radius:20px ;
 	}
 	.zad{
 		transform: translateZ(-(@cubeHeight/2));
 
 	}
-	&:hover {
-		transform: rotateX(-90deg);
+	&:hover{
+		animation-play-state: paused;
 	}
-
 }
 
+/*Скажем так конструктор для топ меню, которое О компании Как нас найти и тд */
 .centre{
 	position: relative; left: 0; top: 0; text-align: center;
 	background: @accent-color;
 }
 
-
+/* Само меню*/
 .top-menu{
 
 	font-size:1em;
@@ -209,7 +228,7 @@ body{
 
 
 
-
+/*Подменю со стрелками пунктами Торговый центр Крытый рынок.*/
 .backgraundFormenu{
 	margin: 0 0 0 0 ;
 	width: 100%;
@@ -220,12 +239,8 @@ body{
 }
 
 
-.color2{
-	box-shadow: 4px 1px 3px rgba(0,0,3,.6);
-	background: #DCDCDC;;
-}
 
-
+/*Треугольники для меню */
 .rectangles{
 	position: absolute;
 	.teg-for-menu{
@@ -245,11 +260,14 @@ body{
 		transform: rotate(90deg) translate(-40px -40px);
 	}
 }
+/*../Топ лого (Header) */
 
 
+/*Само меню его конструктор*/
 .commerch-menu{
 	position: relative;
 	text-align: center;
+
 	ul{
 
 		margin: 0 auto;
@@ -257,6 +275,7 @@ body{
 		letter-spacing : -.36em;
 		font-size : 0;
 		li{
+			transition: 0.5s;
 			letter-spacing: normal;
 			font-size : 14px;
 			Color:@color-for-a;
@@ -279,7 +298,7 @@ body{
 }
 
 
-
+/*Меню слева, что возле слайдера j обёртка*/
 .for-left-meny{
 	z-index: 3;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f7fc+0,f8fbfe+100&1+0,1+79,0.7+88,0+100 */
@@ -296,6 +315,8 @@ body{
 	height: 360px;
 }
 
+
+/*Стиль для заголовка в меню слайдера*/
 .labe2{
 	width: 135px;
 	text-align: center;
@@ -304,6 +325,19 @@ body{
 	padding: 10px 50px;
 	background: @default-primary-color;
 	border-top: 1px solid @accent-color;
+}
+/*Само меню*/
+.rect-for-slider{
+	position: absolute;
+	.tag-for-rect-slider{
+		width: 0;
+		height: 0;
+		border: 8px solid transparent;
+		border-top-color: @dark-primary-color;
+	}
+	.left-rect-slider{
+		transform: translate(-13px) rotate(270deg);
+	}
 }
 
 .leftMeny{
@@ -316,13 +350,38 @@ body{
 		position: inherit;
 
 		li{
+
+
+			/*Подменю*/
+			ul{
+
+				position: absolute;
+				margin-left: 5px;
+				margin-top: 6px;
+				display: none;
+			}
+			ul li{
+				list-style-type: none;
+				background:white;
+				width: 190px;
+				border: none;
+				margin-bottom: 3px;
+				&:hover{
+					width: 190px;
+					background-color: @dark-primary-color;
+				}
+
+			}
+
+
+			/*Подменю*/
 			transition:0.5s;
 			width: 205px;
 			position: relative;
-			margin-bottom: 25px;
+			margin-bottom: 10px;
 			list-style-type: none;
 			cursor: pointer;
-			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e9a52+0,2ad864+50,20ca5c+51,7ee8a0+100 */
+
 			background: rgb(30,154,82); /* Old browsers */
 			background: -moz-linear-gradient(left,  rgba(30,154,82,1) 0%,rgba(32,202,92,1)  50%,rgba(42,216,100,1)  51%, rgba(126,232,160,1) 100%); /* FF3.6-15 */
 			background: -webkit-linear-gradient(left,  rgba(30,154,82,1) 0%,rgba(42,216,100,1) 50%,rgba(42,216,100,1) 51%,rgba(126,232,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -338,7 +397,10 @@ body{
 				}
 			}
 			&:hover{
-				width: 230px;
+				width: 250px;
+			}
+			&:hover ul{
+				display: block;
 			}
 		}
 	}
@@ -349,13 +411,12 @@ body{
 
 
 
-
-
+/*Блок для слайдера*/
 .block-for-slider{
 	z-index: 2;
 	position:absolute;
 	left: 50%;
-	margin-left: -400px;
+	margin-left: -420px;
 	margin-top:2% ;
 	width: 860px;
 	height: 400px;
@@ -363,7 +424,7 @@ body{
 
 
 
-
+/*Слайдер*/
 .slider{
 	z-index: -1;
 	margin-left: 230px;
@@ -389,9 +450,9 @@ body{
 	}
 }
 
-
+/*Боковые кнопки для слайдера*/
 .butonsForSlider{
-	z-index: 3;
+	z-index: -1;
 	position: absolute;
 	width: 100%;
 	top:155px;
@@ -428,63 +489,22 @@ body{
 .button:hover:before{
 	border-top-color:@dark-primary-color ;
 }
-.help-centre{
-	position: absolute;
-	left:50px;
-}
-
-.cube-for-help {
-	padding: 1.5em 0;
-	position: relative;
-	width: 150px;
-	height: 100px;
-	transition: transform 1s;
-	transform-style: preserve-3d;
-	.face,.bottom,.left,.right,.top,.zad {
-		position: absolute;
-		width: 150px;
-		height: 100px;
-		text-align: center;
-		box-shadow: 0 0 2px @dark-primary-color, inset 0 0 9px @dark-primary-color;
-		background: @light-primary-color;
-		border: 1px solid @accent-color;
-
-	}
-	.face {
-		transform: translateZ(100px/2);
-	}
-
-	.top{
-		transform: rotateX(90deg) translateZ(100px/2);
-
-	}
-	&:hover {
-		transform: rotateX(-90deg);
-	}
-
-}
 
 
 
 
 
-
+/*Стилиь длая заголовков новостей и тд*/
 .nameBlock{
 	font:17px  sens-serif;
 	vertical-align: middle;
-	text-align: center;
 	margin: 2% 0 0 15% ;
 	position: relative;
-	height: 30px;
-	width: 200px;
-	background: @dark-primary-color;
-	border-top-right-radius: 20px;
-	box-shadow: 4px 2px 3px rgba(0,0,3,.6);
 }
 
 
 
-
+/*Обёртка для новостей*/
 .newsWrapper{
 	position: relative; left: 0; top: 0; height: auto; width: auto; text-align: center;
 	.tex_align{
@@ -504,7 +524,7 @@ body{
 	}
 
 }
-
+/*Стили для донышка =) */
 .bottom_line{
 	position: absolute;
 	width: 100%;
@@ -529,11 +549,24 @@ body{
 	}
 	.for-text{
 		float: left;
+		margin-top: 2px;
 		margin-left: 7px;
 		width: 350px;
 		color: white;
 	}
+	.under{
+		margin-top: 2px;
+		font-size: 16px;
+		font-weight: 500;
+		text-decoration: underline;
+	}
+	.bottom-inf{
 
+		margin-top: 10px;
+		float: right;
+		margin-right:0.5% ;
+		color: white;
+	}
 }
 
 
@@ -561,7 +594,15 @@ body{
 		margin: 2% 0 0 5% ;
 	}
 }
+@keyframes rotate {
+	50% {
+		transform: rotateX(-90deg);
+	}
+	50% {
+		transform: rotateX(-90deg);
+	}
 
+}
 /* The two faces of the cube */
 
 /* Position the faces */
