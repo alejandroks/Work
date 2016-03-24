@@ -1,6 +1,6 @@
 
-@cubeWight:px;
-@cubeHeight:90px;
+@cubeWight:250px;
+@cubeHeight:30px;
 @fontForme:12px;
 @bottomBackGr:linear-gradient(#FFC773, #FF9800  48%,#FF9800 52%, #FFC773);
 @b:linear-gradient(rgb(252,234,187)0.2%, rgb(252,234,187)  48%,#388E3C 52%, #3A6A3D);
@@ -19,7 +19,7 @@
 @text-primary-color:  #FFFFFF;
 @accent-color :  rgb(252,234,187);
 @primary-text-color  : #212121;
-@secondary-text-color  :  #727272;
+@secondary-accent-color  :  #FEF4DA;
 @divider-color    : #B6B6B6;
 
 
@@ -50,9 +50,40 @@ body{
 .centerBody2{
 	position: relative;
 	box-shadow: 2px 2px 6px rgb(0,0,9);
-	margin: 0 15% 4% 15% ;
+	margin: 4% 15% 4% 15% ;
 	padding-bottom: 20%;
-	background: #DCDCDC;
+	background: url(../img/BGfor-news.png);
+	&:before{
+		position: absolute;
+		content: '';
+		width: 160px;
+		height: 40px;
+		transform: translate(-40px,20px) skew(-20deg) rotate(-35deg);
+
+		border-left: 1px dashed rgba(0, 0, 0, 0.1);
+		border-right: 1px dashed rgba(0, 0, 0, 0.1);
+		background: rgba(0, 0, 0, 0.1);
+		background: -webkit-gradient(linear, 555% 20%, 0% 92%, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.0)), color-stop(.1,rgba(0, 0, 0, 0.2)));
+		background: -moz-linear-gradient(555% 0 180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.2) 10%, rgba(0,0,0,0.0));
+		box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+	}
+	&:after{
+		position: relative;
+		content: '';
+		width: 100px;
+		height: 40px;
+		float: right;
+		transform: translate(40px,40px) skew(20deg) rotate(35deg);
+
+
+		border-left: 1px dashed rgba(0, 0, 0, 0.1);
+		border-right: 1px dashed rgba(0, 0, 0, 0.1);
+		background: rgba(0, 0, 0, 0.1);
+		background: -webkit-gradient(linear, 555% 20%, 0% 92%, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.0)), color-stop(.1,rgba(0, 0, 0, 0.2)));
+		background: -moz-linear-gradient(555% 0 180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.2) 10%, rgba(0,0,0,0.0));
+		box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+	}
+
 }
 
 /*Центральные обёртки  */
@@ -83,8 +114,9 @@ body{
 		left: 41%;
 	}
 	position: relative;
-	border-top: 5px solid @accent-color;
-	background: @dark-primary-color;
+	border-top: 5px solid yellow;
+	background: rgb(0, 101, 67);
+	background: linear-gradient(160deg, rgb(0, 101, 67) 0%, rgb(119, 191, 5) 70%);
 	box-shadow: inset 0 0 1px @accent-color ;
 	opacity: 0.99;
 	width: 100%;
@@ -131,25 +163,22 @@ body{
 /*Скажем так конструктор для куба */
 .cubeWrapper {
 	position: absolute;
-	margin-top: -15px;
 	perspective: 100000px;
-	margin-left: 1%;
 }
 
 .cube {
-	padding: 1.5em 0;
 	position: relative;
 	width: @cubeWight;
 	height: @cubeHeight;
 	transform-style: preserve-3d;
 	backface-visibility: hidden;
 	text-align: left;
-	//animation: rotate 3s infinite ease-in-out;
+	/*animation: rotate 3s infinite ease-in-out;*/
 	.face,.bottom,.left,.right,.top,.zad {
 		width: @cubeWight;
-		box-shadow: 0 0 2px @dark-primary-color, inset 0 0 9px @dark-primary-color;
+		box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
 		position: absolute;
-		background: @dark-primary-color;
+		background: #DCDCDC;
 
 		height: @cubeHeight;
 	}
@@ -184,13 +213,13 @@ body{
 /*Скажем так конструктор для топ меню, которое О компании Как нас найти и тд */
 .centre{
 	position: relative; left: 0; top: 0; text-align: center;
-	background: @accent-color;
+	background: rgb(34, 150, 34);
+	border-bottom: 4px solid yellow;
 }
 
 /* Само меню*/
 .top-menu{
 
-	font-size:1em;
 	ul{
 		letter-spacing : -.36em;
 		font-size:0;
@@ -199,13 +228,12 @@ body{
 			border-left:1px solid @dark-primary-color ;
 			letter-spacing: normal;
 			vertical-align: middle;
-			/*box-shadow: 0 0 0 30em rgba(0,0,0,0) inset, .1em .1em .2em @light-primary-color;*/
-			background: @accent-color;
+			background: rgb(34, 150, 34);
 			outline: none;
-			Color:@color-for-a;
+			Color:white;
 			cursor:pointer;
 			display: inline-block;
-			font: 14px Thoma;
+			font: 12px Thoma;
 			padding: 0.55% 3%;
 			a{
 				display:inline-block;
@@ -213,6 +241,8 @@ body{
 			}
 			&:hover{
 				color: black;
+				background:@dark-primary-color ;
+				box-shadow: inset 0 0px 0px 1px rgba(0,0,0,0.1);
 			}
 			&:active{
 				top: .1em;
@@ -288,10 +318,10 @@ body{
 			}
 			&:hover{
 				background: @dark-primary-color;
-				color: #000009;
+				color: @back-grund;
 			}
 			&:active{
-				box-shadow: 0 0 0 80px rgba(0,0,0,.05) inset;
+				box-shadow: 0 0 0 80px rgba(0,0,0,.05) ;
 			}
 		}
 	}
@@ -491,21 +521,15 @@ body{
 }
 
 
+/*Для новостей*/
 
 
-
-/*Стилиь длая заголовков новостей и тд*/
-.nameBlock{
-	font:17px  sens-serif;
-	vertical-align: middle;
-	margin: 2% 0 0 15% ;
-	position: relative;
-}
 
 
 
 /*Обёртка для новостей*/
 .newsWrapper{
+
 	position: relative; left: 0; top: 0; height: auto; width: auto; text-align: center;
 	.tex_align{
 		text-align: left;
@@ -587,7 +611,7 @@ body{
 		margin: 2% 5% 0 5% ;
 	}
 	.centerBody2{
-		margin: 0 5% 0 5% ;
+		margin: 4% 5% 4% 5% ;
 	}
 	.nameBlock{
 		position: relative;
